@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+PIL
+opencv-contrib-python
+torch
+torchvision
+pytorch-pretrained-biggan
+transformers
+nltk
