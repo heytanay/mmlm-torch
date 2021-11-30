@@ -12,5 +12,11 @@ class Config:
         'i love a <WORD>.',
         'i like a <WORD>.',
         'i found a <WORD>.',
+        'i desire a <WORD>.',
+        'i want a <WORD>.',
+        'i hate a <WORD>.',
+        'i use a <WORD>.',
+        'i conjure a <WORD>.',
+        'i need a <WORD>.'
     ]
     pat_len = len(PATTERNS)
