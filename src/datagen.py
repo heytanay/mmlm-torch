@@ -13,8 +13,8 @@ from pytorch_pretrained_biggan import BigGAN, truncated_noise_sample, one_hot_fr
 nltk.download('wordnet')
 warnings.simplefilter('ignore')
 
-from config import Config
-from datagen_functions import *
+from .config import Config
+from .datagen_functions import *
 
 if __name__ == "__main__":
     # Get the class names

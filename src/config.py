@@ -2,7 +2,7 @@ from transformers import AutoModel, AutoTokenizer
 from pytorch_pretrained_biggan import BigGAN
 
 class Config:
-    wandb = True
+    wandb = False
     MODEL_CLASS = AutoModel
     gan_model = BigGAN.from_pretrained('biggan-deep-128')
     lm_tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')

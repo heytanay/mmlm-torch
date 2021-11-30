@@ -13,8 +13,6 @@ class MapperModel(nn.Module):
             nn.ReLU(),
             nn.AvgPool2d(kernel_size=(3, 4), stride=(2, 1)),
             nn.ReLU(),
-            nn.AvgPool2d(kernel_size=(3, 4), stride=(2, 1)),
-            nn.ReLU(),
             nn.Dropout(0.3),
             nn.Linear(in_features=191, out_features=128),
         )

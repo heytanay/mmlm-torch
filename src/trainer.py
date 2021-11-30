@@ -62,8 +62,8 @@ class Trainer:
         running_loss = 0
         prog_bar = tqdm(enumerate(self.train_loader), total=len(self.train_loader))
         for idx, (img_emb, text_emb) in prog_bar:
-            img_emb = self._convert_if_not_tensor(img_emb)
-            text_emb = self._convert_if_not_tensor(text_emb)
+            img_emb = self._convert_if_not_tensor(img_emb, dtype=torch.float32)
+            text_emb = self._convert_if_not_tensor(text_emb, dtype=torch.float32)
             
             loss = self._batch_calculation(
                 text_emb, img_emb, 
@@ -91,8 +91,8 @@ class Trainer:
         running_loss = 0
         prog_bar = tqdm(enumerate(self.valid_loader), total=len(self.valid_loader))
         for idx, (img_emb, text_emb) in prog_bar:
-            img_emb = self._convert_if_not_tensor(img_emb)
-            text_emb = self._convert_if_not_tensor(text_emb)
+            img_emb = self._convert_if_not_tensor(img_emb, dtype=torch.float32)
+            text_emb = self._convert_if_not_tensor(text_emb, dtype=torch.float32)
 
             loss = self._batch_calculation(
                 text_emb, 
