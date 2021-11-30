@@ -135,7 +135,7 @@ class Trainer:
                 print(f"Saved model with val_loss: {best_loss:.4f} at ./{custom_name}")
             
             # Log
-            if Config['wandb']:
+            if Config.wandb:
                 wandb_log(
                     train_loss=train_running_loss,
                     val_loss=valid_loss
