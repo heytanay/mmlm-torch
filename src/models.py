@@ -9,12 +9,12 @@ class MapperModel(nn.Module):
         """
         super(MapperModel, self).__init__()
         self.model = nn.Sequential(
-            nn.AvgPool2d(kernel_size=(3, 4), stride=(2, 1)),
-            nn.ReLU(),
-            nn.AvgPool2d(kernel_size=(3, 4), stride=(2, 1)),
-            nn.ReLU(),
+            nn.AvgPool2d(kernel_size=(3, 4), stride=(2, 2)),
+            nn.SELU(),
+            nn.AvgPool2d(kernel_size=(3, 4), stride=(2, 2)),
+            nn.SELU(),
             nn.Dropout(0.3),
-            nn.Linear(in_features=191, out_features=128),
+            nn.Linear(in_features=190, out_features=128),
         )
     
     def forward(self, x):

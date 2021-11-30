@@ -72,7 +72,7 @@ class Trainer:
                 self.optimizer
             )
             loss_itm = loss.item()
-            prog_bar.set_description(f"loss: {loss_itm}")
+            # prog_bar.set_description(f"loss: {loss_itm:.4f}")
             running_loss += loss_itm
         running_loss = running_loss / len(self.train_loader)
 
@@ -102,7 +102,7 @@ class Trainer:
                 None
             )
             loss_itm = loss.item()
-            prog_bar.set_description(f"val_loss: {loss_itm}")
+            # prog_bar.set_description(f"val_loss: {loss_itm:.4f}")
             running_loss += loss_itm
 
         running_loss = running_loss / len(self.valid_loader)

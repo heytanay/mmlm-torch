@@ -11,6 +11,7 @@ from pytorch_pretrained_biggan import BigGAN, truncated_noise_sample, one_hot_fr
 
 import torch
 import torch.nn as nn
+from torchsummary import summary
 from torch.utils.data import Dataset, DataLoader
 
 from src.trainer import Trainer
@@ -50,15 +51,15 @@ if __name__ == "__main__":
 
     valid_loader = DataLoader(
         valid_data, 
-        batch_size=1, 
-        shuffle=True, 
+        batch_size=1,
+        shuffle=True,
         num_workers=2
     )
 
     # Define model, loss functions and optimizers
     model = MapperModel()
     model = model.to(torch.device('cuda'))
-    train_loss_fn, valid_loss_fn = nn.MSELoss(), nn.MSELoss()
+    train_loss_fn, valid_loss_fn = nn.L1Loss(), nn.L1Loss()
     optim = torch.optim.Adam(model.parameters())
 
     # Define a Trainer and do the fitting
