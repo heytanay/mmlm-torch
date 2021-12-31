@@ -30,3 +30,7 @@ class Attention(nn.Module):
         output = self.proj_drop(output)
 
         return output
+
+class PatchEmbeddings(nn.Module):
+    def __init__(self):
+        pass

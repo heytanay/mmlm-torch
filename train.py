@@ -57,20 +57,20 @@ if __name__ == "__main__":
     )
 
     # Define model, loss functions and optimizers
-    model = MapperModel()
-    model = model.to(torch.device('cuda'))
-    train_loss_fn, valid_loss_fn = nn.L1Loss(), nn.L1Loss()
-    optim = torch.optim.Adam(model.parameters())
+    # model = MapperModel()
+    # model = model.to(torch.device('cuda'))
+    # train_loss_fn, valid_loss_fn = nn.L1Loss(), nn.L1Loss()
+    # optim = torch.optim.Adam(model.parameters())
 
-    # Define a Trainer and do the fitting
-    trainer = Trainer(
-        model=model,
-        config=Config, 
-        dataloaders=(train_loader, valid_loader),
-        optimizer=optim,
-        loss_fns=(train_loss_fn, valid_loss_fn),
-        scheduler=None,
-        apex=True
-    )
+    # # Define a Trainer and do the fitting
+    # trainer = Trainer(
+    #     model=model,
+    #     config=Config, 
+    #     dataloaders=(train_loader, valid_loader),
+    #     optimizer=optim,
+    #     loss_fns=(train_loss_fn, valid_loss_fn),
+    #     scheduler=None,
+    #     apex=True
+    # )
 
-    trainer.fit()
+    # trainer.fit()
